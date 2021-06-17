@@ -1,0 +1,138 @@
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Montserrat";
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.App {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin: 64px auto;
+  padding: 32px;
+}
+
+.content {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 0.25em;
+  box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  left: 50%;
+  padding: 10vmin;
+  position: fixed;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+label {
+  margin: 12px 0;
+}
+
+.TriviaBoard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 48px;
+}
+
+.Choice {
+  border: 1px solid darkslategray;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 40px;
+  margin-top: 16px;
+  min-width: 300px;
+  padding: 0 20px 0;
+  width: 70%;
+
+  &:hover {
+    background-color: darkslategray;
+  }
+}
+
+.ResultBox {
+  margin: 32px 0;
+  border: 1px solid black;
+  border-radius: 12px;
+  padding: 0 24px;
+}
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid rgb(41, 41, 41);
+  border-color: rgb(41, 41, 41) transparent rgb(41, 41, 41) transparent;
+  animation: lds-dual-ring 3s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.bg {
+  animation: slide 20s ease-in-out infinite alternate;
+  background-image: linear-gradient(
+    -60deg,
+    rgb(135, 10, 160) 50%,
+    rgb(38, 165, 0) 50%
+  );
+  bottom: 0;
+  left: -50%;
+  opacity: 0.5;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: -1;
+}
+
+.bg2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 15s;
+}
+
+.bg3 {
+  animation-duration: 16s;
+}
+
+h1 {
+  font-family: monospace;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(25%);
+  }
+}
+
+@media (min-width: 800px) {
+  .App {
+    max-width: 800px;
+  }
+}
